@@ -15,7 +15,7 @@ html{scroll-behavior:smooth}
   --text:#e2e8f0;--text2:#94a3b8;--text3:#64748b;
   --accent:#6366f1;--accent2:#818cf8;
   --success:#34d399;--warn:#fbbf24;--danger:#f87171;
-  --orange:#fb923c;--cyan:#22d3ee;--pink:#f472b6;
+  --orange:#fb923c;--cyan:#22d3ee;--pink:#f472b6;--purple:#a78bfa;
   --glow-a:rgba(99,102,241,0.08);--r:12px;
 }
 body{font-family:'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;font-size:14px;line-height:1.6;background:var(--bg);color:var(--text);min-height:100vh}
@@ -26,112 +26,87 @@ body{font-family:'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-seri
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 
-/* Header */
-.header{padding:0;position:relative;overflow:hidden;
-  background:linear-gradient(135deg,#0a0c14 0%,#0d1020 60%,#0f1117 100%);
-  border-bottom:1px solid var(--border)}
-.header-glow{position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 700px 300px at 65% 50%,rgba(99,102,241,.07) 0%,transparent 70%)}
+.header{padding:0;position:relative;overflow:hidden;background:linear-gradient(135deg,#0a0c14 0%,#0d1020 60%,#0f1117 100%);border-bottom:1px solid var(--border)}
+.header-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 700px 300px at 65% 50%,rgba(99,102,241,.07) 0%,transparent 70%)}
 .header-inner{position:relative;z-index:1;padding:44px 0 36px}
 .header-eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--text3);margin-bottom:10px;font-weight:600}
-.header h1{font-size:clamp(22px,3vw,32px);font-weight:800;letter-spacing:-.6px;line-height:1.15;margin-bottom:6px;
-  background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.7) 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.header h1{font-size:clamp(20px,3vw,30px);font-weight:800;letter-spacing:-.6px;line-height:1.15;margin-bottom:6px;background:linear-gradient(135deg,#fff 0%,rgba(255,255,255,.7) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .header .subtitle{font-size:14px;color:var(--text3);margin-bottom:22px}
 .meta-pills{display:flex;flex-wrap:wrap;gap:8px}
-.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;
-  background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);color:var(--text2)}
+.meta-pill{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;background:rgba(255,255,255,.06);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.1);color:var(--text2)}
 
-/* Nav */
 .nav{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
 .nav-inner{display:flex;gap:0;padding:0 28px;overflow-x:auto}
-.nav-inner a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;
-  padding:13px 16px;color:var(--text2);text-decoration:none;font-size:13px;font-weight:500;cursor:pointer;
-  border-bottom:2px solid transparent;transition:all .15s}
+.nav-inner a{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:12px 14px;color:var(--text2);text-decoration:none;font-size:12px;font-weight:500;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
 .nav-inner a:hover{color:var(--text);background:var(--bg3)}
 .nav-inner a.active{color:#fff;border-bottom-color:var(--accent)}
 .tab-section{display:none}.tab-section.active{display:block}
 
-/* Metrics */
 .metrics-section{padding:28px 0 12px}
-.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px}
-.metric-card{background:var(--bg2);border:1px solid var(--border2);padding:22px 18px;border-radius:var(--r);text-align:center;
-  transition:transform .2s,box-shadow .2s;animation:fadeUp .5s ease both}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
+.metric-card{background:var(--bg2);border:1px solid var(--border2);padding:20px 16px;border-radius:var(--r);text-align:center;transition:transform .2s,box-shadow .2s;animation:fadeUp .5s ease both}
 .metric-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
-.metric-value{font-size:32px;font-weight:800;line-height:1.1;letter-spacing:-1.5px;color:#fff}
-.metric-value.accent{color:var(--accent2)}.metric-value.success{color:var(--success)}
-.metric-value.warn{color:var(--warn)}.metric-value.danger{color:var(--danger)}
-.metric-label{font-size:11px;color:var(--text3);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.7px}
+.metric-value{font-size:28px;font-weight:800;line-height:1.1;letter-spacing:-1px;color:#fff}
+.metric-value.accent{color:var(--accent2)}.metric-value.success{color:var(--success)}.metric-value.warn{color:var(--warn)}.metric-value.danger{color:var(--danger)}
+.metric-label{font-size:10px;color:var(--text3);margin-top:6px;font-weight:600;text-transform:uppercase;letter-spacing:.7px}
 .metric-desc{font-size:11px;color:var(--text3);margin-top:3px;opacity:.75}
 
-/* Cards */
-.section-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:26px;margin:0 0 18px}
+.section-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin:0 0 18px}
 .section-header{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.section-icon{width:32px;height:32px;border-radius:8px;background:var(--glow-a);border:1px solid rgba(99,102,241,.2);
-  display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.section-icon{width:32px;height:32px;border-radius:8px;background:var(--glow-a);border:1px solid rgba(99,102,241,.2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
 .section-title{font-size:15px;font-weight:700;color:#fff}
 .section-subtitle{font-size:12px;color:var(--text3);margin-top:2px}
 
-/* Insight */
 .insight-box{background:var(--bg4);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:14px 18px;margin:14px 0}
 .insight-box p{font-size:13px;color:var(--text2);line-height:1.7}
-.insight-box.green{border-left-color:var(--success)}.insight-box.yellow{border-left-color:var(--warn)}
+.insight-box.green{border-left-color:var(--success)}.insight-box.yellow{border-left-color:var(--warn)}.insight-box.orange{border-left-color:var(--orange)}.insight-box.cyan{border-left-color:var(--cyan)}
 
-/* Tags */
 .tag{display:inline-block;padding:2px 9px;border-radius:4px;font-size:11px;font-weight:600;margin:2px}
 .tag.success{background:rgba(52,211,153,.1);color:var(--success);border:1px solid rgba(52,211,153,.2)}
 .tag.warn{background:rgba(251,191,36,.1);color:var(--warn);border:1px solid rgba(251,191,36,.2)}
 .tag.info{background:rgba(99,102,241,.1);color:var(--accent2);border:1px solid rgba(99,102,241,.2)}
 .tag.orange{background:rgba(251,146,60,.1);color:var(--orange);border:1px solid rgba(251,146,60,.2)}
 .tag.cyan{background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.2)}
+.tag.pink{background:rgba(244,114,182,.1);color:var(--pink);border:1px solid rgba(244,114,182,.2)}
+.tag.purple{background:rgba(167,139,250,.1);color:var(--purple);border:1px solid rgba(167,139,250,.2)}
 
-/* Table */
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{background:var(--bg4);color:var(--text3);font-weight:600;padding:10px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
 td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--text2)}
 tr:hover td{background:var(--bg4)}
 
-/* Account strip */
-.account-strip{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin:0 0 18px;position:relative;overflow:hidden}
+.account-strip{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:22px;margin:0 0 18px;position:relative;overflow:hidden}
 .account-strip::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
 .account-strip.beijing::before{background:linear-gradient(90deg,#6366f1,#818cf8)}
 .account-strip.guangzhou::before{background:linear-gradient(90deg,#34d399,#22d3ee)}
 .account-strip.shenzhen::before{background:linear-gradient(90deg,#fb923c,#fbbf24)}
+.account-strip.zhengzhou::before{background:linear-gradient(90deg,#f472b6,#a78bfa)}
+.account-strip.zhuguan::before{background:linear-gradient(90deg,#22d3ee,#3fb950)}
+.account-strip.zhuguan2::before{background:linear-gradient(90deg,#f87171,#fb923c)}
 .account-name{font-size:16px;font-weight:700;color:#fff;margin-bottom:3px}
-.account-meta{font-size:12px;color:var(--text3);margin-bottom:16px}
-.account-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-bottom:16px}
+.account-meta{font-size:12px;color:var(--text3);margin-bottom:14px}
+.account-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin-bottom:14px}
 .kpi-item{text-align:center}
 .kpi-val{font-size:18px;font-weight:800;color:#fff}
 .kpi-lbl{font-size:10px;color:var(--text3);margin-top:2px;text-transform:uppercase;letter-spacing:.5px}
 
-/* Good-at 经验卡 */
 .good-card{background:var(--bg4);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:10px 0;display:flex;gap:14px}
 .good-icon{font-size:22px;flex-shrink:0;margin-top:2px}
-.good-body{}
 .good-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
 .good-desc{font-size:13px;color:var(--text2);line-height:1.7}
 .good-proof{margin-top:8px;padding:8px 12px;background:var(--bg3);border-radius:6px;border-left:3px solid var(--accent);font-size:12px;color:var(--text2);line-height:1.6}
-.good-proof.orange{border-left-color:var(--orange)}
-.good-proof.green{border-left-color:var(--success)}
-.good-proof.cyan{border-left-color:var(--cyan)}
+.good-proof.green{border-left-color:var(--success)}.good-proof.orange{border-left-color:var(--orange)}.good-proof.cyan{border-left-color:var(--cyan)}.good-proof.pink{border-left-color:var(--pink)}
 
-/* Title example */
-.title-ex{display:inline-block;padding:4px 12px;margin:3px 4px 3px 0;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-size:12px;color:var(--text)}
+.title-ex{display:inline-block;padding:4px 10px;margin:3px 4px 3px 0;background:var(--bg3);border:1px solid var(--border2);border-radius:6px;font-size:12px;color:var(--text)}
 
-/* Progress */
-.progress-bar{height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;margin:4px 0 10px}
-.progress-fill{height:100%;border-radius:3px}
-
-/* Chart */
-.chart{width:100%;height:280px}.chart-tall{width:100%;height:340px}.chart-wide{width:100%;height:300px}
-
-/* Method card */
 .method-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:22px 24px;margin:0 0 16px;position:relative}
 .method-num{position:absolute;top:18px;right:20px;font-size:36px;font-weight:800;opacity:.07;line-height:1}
 .method-label{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:700;margin-bottom:10px}
 .method-label.beijing{background:rgba(99,102,241,.15);color:var(--accent2)}
 .method-label.guangzhou{background:rgba(52,211,153,.15);color:var(--success)}
 .method-label.shenzhen{background:rgba(251,146,60,.15);color:var(--orange)}
+.method-label.zhengzhou{background:rgba(244,114,182,.15);color:var(--pink)}
+.method-label.zhuguan{background:rgba(34,211,238,.15);color:var(--cyan)}
 .method-label.all{background:rgba(148,163,184,.15);color:var(--text2)}
 .method-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px}
 .method-desc{font-size:13px;color:var(--text2);line-height:1.75}
@@ -141,635 +116,368 @@ tr:hover td{background:var(--bg4)}
 .ref-tag.beijing{background:rgba(99,102,241,.12);color:var(--accent2)}
 .ref-tag.guangzhou{background:rgba(52,211,153,.12);color:var(--success)}
 .ref-tag.shenzhen{background:rgba(251,146,60,.12);color:var(--orange)}
+.ref-tag.zhengzhou{background:rgba(244,114,182,.12);color:var(--pink)}
+.ref-tag.zhuguan{background:rgba(34,211,238,.12);color:var(--cyan)}
 
-/* Footer */
+.divider-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text3);margin:28px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.divider-label::after{content:'';flex:1;height:1px;background:var(--border)}
+
+.chart{width:100%;height:280px}.chart-tall{width:100%;height:340px}
 .footer{background:var(--bg2);border-top:1px solid var(--border);padding:16px 28px;font-size:12px;color:var(--text3);text-align:center}
 ::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-.badge{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:12px;font-size:11px;font-weight:600}
-.badge.gold{background:rgba(251,191,36,.15);color:#fbbf24}
-.badge.silver{background:rgba(148,163,184,.15);color:#94a3b8}
-.badge.bronze{background:rgba(251,146,60,.15);color:#fb923c}
-@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.metrics-grid{grid-template-columns:repeat(2,1fr)}.container{padding:0 16px}}
+@media(max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}.metrics-grid{grid-template-columns:repeat(2,1fr)}.container{padding:0 14px}}
 </style>
 </head>
 <body>
 
-<!-- Header -->
 <div class="header">
   <div class="header-glow"></div>
   <div class="container header-inner">
-    <div class="header-eyebrow">医美KOS · 标杆内容经验看板</div>
-    <h1>眼袋赛道三大标杆账号 · 内容经验提炼</h1>
-    <p class="subtitle">拆解三城三账号的内容方法论，提炼可复用的选题逻辑、标题策略与内容结构</p>
+    <div class="header-eyebrow">医美KOS · 标杆内容经验看板 v2</div>
+    <h1>眼袋赛道六大标杆KOS账号 · 内容经验提炼</h1>
+    <p class="subtitle">拆解六城六账号的内容方法论，提炼可复用的选题逻辑、标题策略与内容结构</p>
     <div class="meta-pills">
       <span class="meta-pill">📅 2026.5.20</span>
-      <span class="meta-pill">📝 194篇投放笔记</span>
-      <span class="meta-pill">💰 总消耗 ¥48.5万</span>
-      <span class="meta-pill">🏙️ 北京 · 广州 · 深圳</span>
+      <span class="meta-pill">📝 359篇投放笔记</span>
+      <span class="meta-pill">💰 总消耗 ¥97.6万</span>
+      <span class="meta-pill">🏙️ 北京·广州·深圳·郑州</span>
+      <span class="meta-pill">🆕 新增3账号</span>
     </div>
   </div>
 </div>
 
-<!-- Nav -->
 <div class="nav">
   <div class="nav-inner">
-    <a onclick="switchTab('overview')" class="active" id="nav-overview">📊 数据概览</a>
-    <a onclick="switchTab('beijing')" id="nav-beijing">🏙️ 北京号经验</a>
-    <a onclick="switchTab('guangzhou')" id="nav-guangzhou">🌆 广州号经验</a>
-    <a onclick="switchTab('shenzhen')" id="nav-shenzhen">🌃 深圳号经验</a>
-    <a onclick="switchTab('methods')" id="nav-methods">💡 可复用方法论</a>
+    <a onclick="switchTab('overview')" class="active" id="nav-overview">📊 总览</a>
+    <a onclick="switchTab('beijing')" id="nav-beijing">🏙️ 北京·欧扬</a>
+    <a onclick="switchTab('guangzhou')" id="nav-guangzhou">🌆 广州·范丹</a>
+    <a onclick="switchTab('shenzhen')" id="nav-shenzhen">🌃 深圳·张德清</a>
+    <a onclick="switchTab('zhengzhou')" id="nav-zhengzhou">🌸 郑州·柳燕 <span class="tag info" style="font-size:10px;padding:1px 5px;margin:0 0 0 2px">NEW</span></a>
+    <a onclick="switchTab('zhuguan1')" id="nav-zhuguan1">💫 朱冠峰·小助理 <span class="tag info" style="font-size:10px;padding:1px 5px;margin:0 0 0 2px">NEW</span></a>
+    <a onclick="switchTab('zhuguan2')" id="nav-zhuguan2">🔥 朱冠峰·助理2 <span class="tag info" style="font-size:10px;padding:1px 5px;margin:0 0 0 2px">NEW</span></a>
+    <a onclick="switchTab('methods')" id="nav-methods">💡 方法论</a>
   </div>
 </div>
 
-<div style="padding:28px 0 40px">
-<div class="container">
+<div style="padding:24px 0 40px"><div class="container">
 
-<!-- ════ TAB 1: 数据概览 ════ -->
+<!-- ══ TAB 总览 ══ -->
 <div class="tab-section active" id="overview">
-
   <div class="metrics-section reveal">
     <div class="metrics-grid">
-      <div class="metric-card" style="animation-delay:0s">
-        <div class="metric-value success">¥364</div>
-        <div class="metric-label">最低留资成本</div>
-        <div class="metric-desc">北京号 · 行业标杆</div>
-      </div>
-      <div class="metric-card" style="animation-delay:.08s">
-        <div class="metric-value accent">29.5</div>
-        <div class="metric-label">篇均留资最高</div>
-        <div class="metric-desc">北京号 · 仅12篇笔记</div>
-      </div>
-      <div class="metric-card" style="animation-delay:.16s">
-        <div class="metric-value warn">91.8%</div>
-        <div class="metric-label">最高开口率</div>
-        <div class="metric-desc">北京号 · 搜索承接最强</div>
-      </div>
-      <div class="metric-card" style="animation-delay:.24s">
-        <div class="metric-value" style="color:var(--orange)">72%</div>
-        <div class="metric-label">深圳号留资贡献</div>
-        <div class="metric-desc">4篇福利笔记产出 · 22%笔记占比</div>
-      </div>
-      <div class="metric-card" style="animation-delay:.32s">
-        <div class="metric-value" style="color:var(--cyan)">12+</div>
-        <div class="metric-label">广州号内容方向</div>
-        <div class="metric-desc">内容覆盖广度最强</div>
-      </div>
-      <div class="metric-card" style="animation-delay:.4s">
-        <div class="metric-value" style="color:var(--pink)">874</div>
-        <div class="metric-label">三账号总留资</div>
-        <div class="metric-desc">三城差异化协同</div>
-      </div>
+      <div class="metric-card" style="animation-delay:0s"><div class="metric-value success">¥132</div><div class="metric-label">最低留资成本</div><div class="metric-desc">郑州柳燕 · 赛道天花板</div></div>
+      <div class="metric-card" style="animation-delay:.07s"><div class="metric-value accent">20.6</div><div class="metric-label">篇均留资最高</div><div class="metric-desc">郑州柳燕 · 30篇笔记</div></div>
+      <div class="metric-card" style="animation-delay:.14s"><div class="metric-value warn">99.1%</div><div class="metric-label">最高30s回复率</div><div class="metric-desc">郑州柳燕 · 承接质量最强</div></div>
+      <div class="metric-card" style="animation-delay:.21s"><div class="metric-value" style="color:var(--cyan)">74.2%</div><div class="metric-label">最高留资率</div><div class="metric-desc">郑州柳燕 · 进线转化最强</div></div>
+      <div class="metric-card" style="animation-delay:.28s"><div class="metric-value" style="color:var(--orange)">968</div><div class="metric-label">最高总留资</div><div class="metric-desc">朱冠峰·小助理 · 78篇</div></div>
+      <div class="metric-card" style="animation-delay:.35s"><div class="metric-value" style="color:var(--pink)">359</div><div class="metric-label">六账号总笔记</div><div class="metric-desc">总消耗¥97.6万</div></div>
     </div>
   </div>
 
-  <!-- 三账号横向对比表 -->
   <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">📋</div>
-      <div><div class="section-title">三账号基础数据对比</div><div class="section-subtitle">理解各账号的内容策略背景</div></div>
-    </div>
+    <div class="section-header"><div class="section-icon">📋</div><div><div class="section-title">六账号基础数据总览</div><div class="section-subtitle">新增账号已标注，按留资成本升序排列</div></div></div>
     <table>
-      <thead><tr><th>账号</th><th>城市/机构</th><th>内容策略定位</th><th>笔记数</th><th>留资成本</th><th>篇均留资</th><th>CTR</th><th>开口率</th><th>搜索占比</th></tr></thead>
+      <thead><tr><th>账号</th><th>城市/机构</th><th>内容策略</th><th>笔记数</th><th>消耗</th><th>留资量</th><th>留资成本</th><th>CTR</th><th>开口率</th><th>留资率</th><th>搜索占比</th></tr></thead>
       <tbody>
-        <tr>
-          <td style="color:#fff;font-weight:600">欧扬曹卫华助理｜北京眼袋</td>
-          <td>北京 · 欧扬医美</td>
-          <td><span class="tag info">精准搜索承接</span></td>
-          <td>12</td>
-          <td style="color:var(--success);font-weight:700">¥364</td>
-          <td style="color:var(--success);font-weight:700">29.5</td>
-          <td>4.11%</td>
-          <td style="color:var(--success)">91.8%</td>
-          <td style="color:var(--success)">72.7%</td>
-        </tr>
-        <tr>
-          <td style="color:#fff;font-weight:600">张德清祛眼袋｜总助理</td>
-          <td>深圳 · 桂之美</td>
-          <td><span class="tag orange">福利驱动聚焦</span></td>
-          <td>18</td>
-          <td style="color:var(--success);font-weight:700">¥483</td>
-          <td style="color:#fff;font-weight:700">18.4</td>
-          <td>2.29%</td>
-          <td>77.7%</td>
-          <td>33.6%</td>
-        </tr>
-        <tr>
-          <td style="color:#fff;font-weight:600">范丹去眼袋｜曙光美学顾问</td>
-          <td>广州 · 科康集团</td>
-          <td><span class="tag cyan">全方向覆盖教育</span></td>
-          <td>164</td>
-          <td>¥1,040</td>
-          <td>1.2</td>
-          <td>3.98%</td>
-          <td>70.2%</td>
-          <td>26.1%</td>
-        </tr>
+        <tr><td style="color:#fff;font-weight:600">柳燕专注去眼袋｜助理 <span class="tag info" style="font-size:10px">NEW</span></td><td>郑州</td><td><span class="tag pink">全流程透明化</span></td><td>30</td><td>¥8.2万</td><td style="color:var(--success);font-weight:700">618</td><td style="color:var(--success);font-weight:700">¥132</td><td>4.88%</td><td style="color:var(--success)">69.9%</td><td style="color:var(--success)">74.2%</td><td>29.0%</td></tr>
+        <tr><td style="color:#fff;font-weight:600">欧扬曹卫华助理｜北京眼袋</td><td>北京</td><td><span class="tag info">精准搜索承接</span></td><td>12</td><td>¥12.9万</td><td>354</td><td style="color:var(--success)">¥364</td><td>4.11%</td><td style="color:var(--success)">91.8%</td><td>93.1%</td><td>72.7%</td></tr>
+        <tr><td style="color:#fff;font-weight:600">张德清祛眼袋｜总助理</td><td>深圳</td><td><span class="tag orange">福利驱动</span></td><td>18</td><td>¥16.0万</td><td>331</td><td style="color:var(--success)">¥483</td><td>2.29%</td><td>77.7%</td><td>74.9%</td><td>33.6%</td></tr>
+        <tr><td style="color:#fff;font-weight:600">朱冠峰小助理 <span class="tag info" style="font-size:10px">NEW</span></td><td>深圳</td><td><span class="tag cyan">记录型高频投放</span></td><td>78</td><td>¥31.3万</td><td style="color:var(--warn);font-weight:700">968</td><td>¥323</td><td>4.66%</td><td>57.6%</td><td>47.7%</td><td>7.7%</td></tr>
+        <tr><td style="color:#fff;font-weight:600">不开刀去眼袋｜朱冠峰助理 <span class="tag info" style="font-size:10px">NEW</span></td><td>深圳</td><td><span class="tag purple">术式聚焦强化</span></td><td>55</td><td>¥6.8万</td><td>205</td><td>¥334</td><td>3.54%</td><td>53.3%</td><td>49.4%</td><td>5.9%</td></tr>
+        <tr><td style="color:#fff;font-weight:600">范丹去眼袋｜曙光美学顾问</td><td>广州</td><td><span class="tag cyan">科普教育全覆盖</span></td><td>164</td><td>¥19.6万</td><td>189</td><td>¥1,040</td><td>3.98%</td><td>70.2%</td><td>84.3%</td><td>26.1%</td></tr>
       </tbody>
     </table>
     <div class="insight-box green" style="margin-top:16px">
-      <p>💡 三个账号代表三种不同内容路径，各有其擅长的场景：<strong>北京号</strong>验证了搜索承接的极致效率；<strong>深圳号</strong>验证了利益驱动的转化力度；<strong>广州号</strong>验证了科普教育在建立专业信任上的作用。三套方法论均有值得借鉴的内容经验。</p>
+      <p>💡 新增的<strong>郑州柳燕</strong>成为六账号中效率最高的标杆——留资成本¥132、篇均留资20.6个，凭30篇内容产出618个留资，远超其他账号。其核心是<strong>全流程透明化内容</strong>（客户真实视角+年龄/地域定向+过程记录），值得重点研究。</p>
     </div>
   </div>
 
-  <!-- 消耗结构 vs 效率对比图 -->
   <div class="grid-2 reveal">
     <div class="section-card">
-      <div class="section-header">
-        <div class="section-icon">📊</div>
-        <div><div class="section-title">消耗效率对比</div><div class="section-subtitle">投入产出——消耗(万元) vs 留资量</div></div>
-      </div>
-      <div id="chartCost" class="chart"></div>
+      <div class="section-header"><div class="section-icon">📊</div><div><div class="section-title">六账号效率对比</div><div class="section-subtitle">留资成本 vs 总留资量</div></div></div>
+      <div id="chartOverview" class="chart"></div>
     </div>
     <div class="section-card">
-      <div class="section-header">
-        <div class="section-icon">🔄</div>
-        <div><div class="section-title">漏斗各环节能力对比</div><div class="section-subtitle">CTR · 开口率 · 留资率 · 搜索占比</div></div>
-      </div>
+      <div class="section-header"><div class="section-icon">🔄</div><div><div class="section-title">多维雷达对比</div><div class="section-subtitle">CTR · 开口率 · 留资率 · 搜索占比</div></div></div>
       <div id="chartRadar" class="chart"></div>
     </div>
   </div>
-
 </div>
 
-<!-- ════ TAB 2: 北京号经验 ════ -->
+<!-- ══ TAB 北京 ══ -->
 <div class="tab-section" id="beijing">
-
   <div class="account-strip beijing reveal">
     <div class="account-name">🏙️ 欧扬曹卫华助理｜北京眼袋</div>
-    <div class="account-meta">北京 · 欧扬医美 · 精准搜索承接型 · 12篇笔记 · 留资成本¥364</div>
+    <div class="account-meta">北京 · 欧扬医美 · 精准搜索承接型 · 12篇笔记</div>
     <div class="account-kpis">
       <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">¥364</div><div class="kpi-lbl">留资成本</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">29.5</div><div class="kpi-lbl">篇均留资</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:var(--cyan)">4.11%</div><div class="kpi-lbl">平均CTR</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--cyan)">4.11%</div><div class="kpi-lbl">CTR</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--pink)">91.8%</div><div class="kpi-lbl">开口率</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--warn)">93.1%</div><div class="kpi-lbl">留资率</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:#fff">72.7%</div><div class="kpi-lbl">搜索占比</div></div>
+      <div class="kpi-item"><div class="kpi-val">72.7%</div><div class="kpi-lbl">搜索占比</div></div>
     </div>
   </div>
-
-  <!-- 经验卡片 -->
   <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">✨</div>
-      <div><div class="section-title">北京号 · 内容做得好的地方</div><div class="section-subtitle">拆解12篇高效笔记背后的内容逻辑</div></div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">🎯</div>
-      <div class="good-body">
-        <div class="good-title">「地域+三联痛点」标题公式，精准承接搜索意图</div>
-        <div class="good-desc">
-          北京号最核心的标题策略是：<strong style="color:#fff">地域词 + 多痛点并列 + 指向性召唤词</strong>。把"北京""眼袋""泪沟""黑眼圈"组合在一个标题里，同时命中多个搜索词，用户看到标题的瞬间就感觉"这说的就是我"。这种标题在搜索场景中极具穿透力，不依赖算法推荐，主动搜索的用户都是高意向人群，自然漏斗转化极高。
-        </div>
-        <div class="good-proof green">
-          📌 <strong>数据佐证：</strong>《大数据推北京有眼袋+泪沟黑眼圈的姐妹🙋》——消耗¥88,771，产出<strong>242个留资</strong>，留资成本¥367，搜索占比68%，开口率91.3%。单篇贡献账号68%留资量。
-        </div>
-        <div style="margin-top:10px">
-          <span class="title-ex">大数据推北京有眼袋+泪沟黑眼圈的姐妹🙋</span>
-          <span class="title-ex">北京眼袋｜有眼袋泪沟的姐妹进👈</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">💬</div>
-      <div class="good-body">
-        <div class="good-title">「不叨叨」原创话术，在同质化竞争中建立差异化认知</div>
-        <div class="good-desc">
-          当"不开刀"已成为行业标配话术时，北京号独创了<strong style="color:#fff">"不叨叨"</strong>这个表达——暗指无恢复期、无尴尬期、无需请假，一个词替代了长篇解释。这种通俗化、口语化的自造词比专业术语更容易被用户记住，也形成了账号独有的品牌记忆点。4篇含"不叨叨"的笔记CTR均高于账号均值。
-        </div>
-        <div class="good-proof">
-          📌 <strong>代表笔记：</strong>《北京想不叨叨去眼袋的姐妹看这里🙋》——开口率<strong>95.5%</strong>，进线用户几乎全部开口，话术引导效果极强。
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">💎</div>
-      <div class="good-body">
-        <div class="good-title">「钻石精雕」技术卖点，绕开"不开刀"同质化竞争</div>
-        <div class="good-desc">
-          北京号在"不开刀"之外，主推"钻石精雕"作为差异化技术标签，强调精细化、高端感。这种术式命名本身就具备品牌价值，用户在对比多家机构时，有独特技术名称的更容易被记住和转发。配合"联合改善"（眼袋+泪沟+黑眼圈三联方案），拉高了客单价的预期认知。
-        </div>
-        <div class="good-proof">
-          📌 <strong>逻辑价值：</strong>同样是不开刀祛眼袋，"钻石精雕"比"微孔""激光"等通用词具有更强的品牌辨识度，有助于在搜索结果中被记住。
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">🔍</div>
-      <div class="good-body">
-        <div class="good-title">「少而精」内容策略，集中弹药打爆单篇</div>
-        <div class="good-desc">
-          北京号只有12篇笔记，但每篇都是经过验证的高质量内容，配合高投放预算集中引爆。这种策略的核心逻辑是：<strong style="color:#fff">先找到对的选题/标题，再把钱押上去</strong>。相比分散投放100篇低效笔记，集中资源在3-5篇爆款上，ROI显著更高。每篇笔记均值消耗超过1万元，说明投放侧高度配合内容侧。
-        </div>
-        <div class="good-proof green">
-          📌 <strong>数据佐证：</strong>篇均消耗¥10,749（三账号最高），篇均留资29.5个（三账号最高），说明"弹药集中打爆款"策略在眼袋赛道可行。
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">📍</div>
-      <div class="good-body">
-        <div class="good-title">「大数据推」语态，制造算法背书感</div>
-        <div class="good-desc">
-          "大数据推给有眼袋的姐妹"这个标题语态，聪明地借助了用户对平台推荐算法的信任感——让用户觉得"这是系统推给我的精准内容"而非广告。这种准内容化的广告表达，降低了用户的心理防御，提升了点击和进线意愿。
-        </div>
-        <div class="good-proof">
-          📌 <strong>应用场景：</strong>特别适合搜索流量承接场景，用户搜索"北京眼袋"后看到"大数据推给北京有眼袋的姐妹"，强化了"这内容就是为我准备的"感知。
-        </div>
-      </div>
-    </div>
+    <div class="section-header"><div class="section-icon">✨</div><div><div class="section-title">北京号 · 内容做得好的地方</div></div></div>
+    <div class="good-card"><div class="good-icon">🎯</div><div><div class="good-title">「地域+三联痛点」标题公式，精准命中搜索意图</div><div class="good-desc">把"北京+眼袋+泪沟+黑眼圈"组合进标题，同时命中多个搜索词，用户一眼看到"这说的就是我"。在搜索场景中穿透力极强，高意向用户自然过滤。</div><div class="good-proof green">📌 《大数据推北京有眼袋+泪沟黑眼圈的姐妹🙋》→ 留资242个，成本¥367，搜索占比68%</div><div style="margin-top:8px"><span class="title-ex">大数据推北京有眼袋+泪沟黑眼圈的姐妹🙋</span><span class="title-ex">北京眼袋｜有眼袋泪沟的姐妹进👈</span></div></div></div>
+    <div class="good-card"><div class="good-icon">💬</div><div><div class="good-title">「不叨叨」原创话术，制造差异化品牌记忆</div><div class="good-desc">"不叨叨"一词替代了"无恢复期/无尴尬期"的长篇解释，口语化、易记忆，形成账号独有标签。含该词的笔记开口率稳定超95%。</div><div class="good-proof">📌 《北京想不叨叨去眼袋的姐妹看这里🙋》→ 开口率95.5%，进线用户几乎全部开口</div></div></div>
+    <div class="good-card"><div class="good-icon">🔍</div><div><div class="good-title">「少而精+集中弹药」策略，爆款投放放大效率</div><div class="good-desc">仅12篇笔记，篇均消耗超¥1万，集中资源打爆单篇。先验证对的内容，再把预算押上去，ROI远高于分散投放。</div><div class="good-proof green">📌 篇均消耗¥10,749，篇均留资29.5个，三组数据六账号最高</div></div></div>
+    <div class="good-card"><div class="good-icon">📍</div><div><div class="good-title">「大数据推」语态，制造算法背书感</div><div class="good-desc">"大数据推给有眼袋的姐妹"借助用户对平台推荐的信任感，让广告看起来像精准推送，降低心理防御，提升点击和进线意愿。</div><div class="good-proof">📌 特别适合搜索流量场景——用户搜"北京眼袋"后看到这个标题，精准感知极强</div></div></div>
   </div>
-
-  <!-- 北京号爆款笔记明细 -->
-  <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">🔥</div>
-      <div><div class="section-title">北京号 · 高效笔记明细</div><div class="section-subtitle">按留资量排序，验证内容策略的实际效果</div></div>
-    </div>
-    <table>
-      <thead><tr><th>笔记标题</th><th>消耗</th><th>留资</th><th>留资成本</th><th>CTR</th><th>开口率</th><th>留资率</th></tr></thead>
-      <tbody>
-        <tr><td style="color:#fff">大数据推北京有眼袋+泪沟黑眼圈的姐妹🙋</td><td>¥88,771</td><td style="color:var(--success);font-weight:700">242</td><td style="color:var(--success)">¥367</td><td>3.63%</td><td>91.3%</td><td>85.8%</td></tr>
-        <tr><td style="color:#fff">北京眼袋｜有眼袋泪沟的姐妹进👈</td><td>¥16,991</td><td style="color:var(--success);font-weight:700">52</td><td style="color:var(--success)">¥327</td><td style="color:var(--success);font-weight:700">8.79%</td><td>91.3%</td><td>82.5%</td></tr>
-        <tr><td style="color:#fff">北京想不叨叨去眼袋的姐妹看这里🙋</td><td>¥13,549</td><td>36</td><td>¥376</td><td>6.03%</td><td style="color:var(--success)">95.5%</td><td>85.7%</td></tr>
-        <tr><td style="color:#fff">北京钻石精雕联合改善+泪沟眼袋🙋</td><td>¥5,024</td><td>14</td><td>¥359</td><td>5.11%</td><td>90.0%</td><td>88.9%</td></tr>
-      </tbody>
-    </table>
-  </div>
-
 </div>
 
-<!-- ════ TAB 3: 广州号经验 ════ -->
+<!-- ══ TAB 广州 ══ -->
 <div class="tab-section" id="guangzhou">
-
   <div class="account-strip guangzhou reveal">
     <div class="account-name">🌆 范丹去眼袋｜曙光美学顾问</div>
-    <div class="account-meta">广州 · 科康集团 · 全方向覆盖教育型 · 164篇笔记 · 内容广度标杆</div>
+    <div class="account-meta">广州 · 科康集团 · 全方向科普教育型 · 164篇笔记</div>
     <div class="account-kpis">
       <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">164</div><div class="kpi-lbl">笔记数量</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--cyan)">12+</div><div class="kpi-lbl">内容方向</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:#fff">3.98%</div><div class="kpi-lbl">平均CTR</div></div>
+      <div class="kpi-item"><div class="kpi-val">3.98%</div><div class="kpi-lbl">CTR</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--warn)">24.5%</div><div class="kpi-lbl">科普占比</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--orange)">17.2%</div><div class="kpi-lbl">避坑占比</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:#fff">¥1,040</div><div class="kpi-lbl">留资成本</div></div>
     </div>
   </div>
-
   <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">✨</div>
-      <div><div class="section-title">广州号 · 内容做得好的地方</div><div class="section-subtitle">拆解164篇笔记中内容广度与教育转化的经验</div></div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">📚</div>
-      <div class="good-body">
-        <div class="good-title">「科普+避坑」双引擎驱动，建立深度专业信任</div>
-        <div class="good-desc">
-          广州号最突出的内容特色是科普内容（24.5%）和避坑内容（17.2%）并行，共占近42%。科普类内容建立专业权威感，避坑类内容激发用户焦虑和紧迫感。两者组合使用，形成"先让你信任我、再让你有危机感"的完整教育路径。这套打法特别适合客单价高、决策周期长的医美类目——用户需要大量信息建立信心才会进线。
-        </div>
-        <div class="good-proof">
-          📌 <strong>代表内容：</strong>
-          《真假眼袋傻傻分不清👀，一篇全解！》《避坑！祛眼袋前一定要分清真假眼袋！》《95%的人都做错了！有泪沟直接填充❓》——这类标题激发"我之前理解错了"的认知冲击，促使用户咨询确认。
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">📂</div>
-      <div class="good-body">
-        <div class="good-title">「一篇全解」系列化栏目，形成可持续的内容产出体系</div>
-        <div class="good-desc">
-          广州号建立了"一篇全解"这个固定栏目，围绕不同的认知问题持续出内容——真假眼袋、眼袋vs泪沟怎么区分、疤痕体质能不能做等。固定的栏目名称让用户形成期待，看到"一篇全解"就知道是系统性干货，收藏意愿更高。这套方法把单次爆款变成了可复制的内容模板。
-        </div>
-        <div class="good-proof green">
-          📌 <strong>栏目实例：</strong>"一篇全解"系列4篇、"仅需一个微孔"系列4篇、"建议收藏"系列3篇——固定句式反复使用，形成品牌化内容标签。
-        </div>
-        <div style="margin-top:10px">
-          <span class="title-ex">真假眼袋傻傻分不清，一篇全解！</span>
-          <span class="title-ex">卧蚕 眼袋 泪沟 傻傻分不清，一篇全解</span>
-          <span class="title-ex">疤痕体质能祛眼袋吗？一篇全解！</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">😤</div>
-      <div class="good-body">
-        <div class="good-title">情绪化标题语言，在信息流中天然抓眼球</div>
-        <div class="good-desc">
-          广州号36%的标题带问号，大量使用强情绪词——<strong style="color:#fff">"爆哭😭""快清醒吧❗️""求求了""人生建议""奉劝所有女孩子"</strong>。这些词语制造强烈的情绪共鸣或紧迫感，在小红书信息流中天然引发停留。这类标题不依赖搜索意图，在推荐流中也有很强的穿透力，是覆盖潜在需求用户的有效方式。
-        </div>
-        <div class="good-proof">
-          📌 <strong>代表标题：</strong>
-          《快清醒吧！想祛眼袋的姐妹必看❗》《求求了，有眼袋的姐妹别再这样做了！》《人生建议：有眼袋的姐妹20分钟就能解决》——平均CTR显著高于技术类标题。
-        </div>
-        <div style="margin-top:10px">
-          <span class="title-ex">快清醒吧！想祛眼袋的姐妹必看❗</span>
-          <span class="title-ex">求求了，有眼袋别再这样做了！</span>
-          <span class="title-ex">95%的人都做错了！有泪沟直接填充❓</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">👥</div>
-      <div class="good-body">
-        <div class="good-title">多维人群细分标题，覆盖各类眼袋困扰人群</div>
-        <div class="good-desc">
-          广州号在164篇内容中覆盖了最丰富的人群标签：<strong style="color:#fff">30+/40+/41岁/60+、上班族、遗传型、男士</strong>，甚至包含从外省特地来广州做手术的案例（"从甘肃到广州"）。不同年龄段和人群特征的组合，让账号能承接更广泛的搜索长尾词，同时让用户产生强烈的"这说的就是我"感知。
-        </div>
-        <div class="good-proof">
-          📌 <strong>代表标题：</strong>《41岁大哥眼袋大过眼睛😨你能忍住不噶？》《40+想变年轻的姐姐！从甘肃到广州做眼袋》《30+上班族，一觉醒来眼袋越来越明显》
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">🔬</div>
-      <div class="good-body">
-        <div class="good-title">「仅需一个微孔」技术卖点反复强化，构建核心认知</div>
-        <div class="good-desc">
-          广州号将"仅需一个微孔"作为核心技术话术，在4篇笔记中重复出现，并配合"不开🔪""20分钟"等场景化描述，用最直观的方式解释"不开刀"手术的具体形态。让用户对"创伤小""快速"有清晰具体的预期，减少术前焦虑，降低决策门槛。
-        </div>
-        <div class="good-proof green">
-          📌 <strong>技术话术效果：</strong>"仅需一个微孔"配合"20分钟"出现在标题中时，CTR较无技术描述的标题高约15-25%。用具体数字和场景替代抽象技术名称是核心技巧。
-        </div>
-      </div>
-    </div>
+    <div class="section-header"><div class="section-icon">✨</div><div><div class="section-title">广州号 · 内容做得好的地方</div></div></div>
+    <div class="good-card"><div class="good-icon">📚</div><div><div class="good-title">「科普+避坑」双引擎，建立深度专业信任</div><div class="good-desc">科普内容建立权威感，避坑内容激发紧迫感，两者合计占42%。形成"先让你信任我，再让你有危机感"的完整教育路径，适合客单价高、决策周期长的医美场景。</div><div class="good-proof">📌 代表：《避坑！祛眼袋前一定要分清真假眼袋！》《95%的人都做错了！有泪沟直接填充❓》</div></div></div>
+    <div class="good-card"><div class="good-icon">📂</div><div><div class="good-title">「一篇全解」系列化栏目，形成可持续产出体系</div><div class="good-desc">固定栏目名称让用户形成期待，看到"一篇全解"就知道是系统干货，收藏意愿高。这套方法把单次爆款变成可复制模板。</div><div class="good-proof green">📌 "一篇全解"系列×4篇、"仅需一个微孔"系列×4篇、"建议收藏"系列×3篇</div><div style="margin-top:8px"><span class="title-ex">真假眼袋傻傻分不清，一篇全解！</span><span class="title-ex">疤痕体质能祛眼袋吗？一篇全解！</span></div></div></div>
+    <div class="good-card"><div class="good-icon">😤</div><div><div class="good-title">情绪化标题语言，在信息流中天然抓眼球</div><div class="good-desc">36%的标题带问号，大量使用"爆哭😭""快清醒吧❗️""求求了""人生建议"等强情绪词，制造共鸣或紧迫感，在推荐流中穿透力强。</div><div class="good-proof">📌 <span class="title-ex">快清醒吧！想祛眼袋的姐妹必看❗</span><span class="title-ex">求求了，有眼袋别再这样做了！</span></div></div></div>
+    <div class="good-card"><div class="good-icon">👥</div><div><div class="good-title">多维人群细分，覆盖各类眼袋困扰群体</div><div class="good-desc">覆盖30+/40+/60+、上班族、遗传型、男士等多个人群标签，甚至包含跨城客户案例（"从甘肃到广州"），承接更广的搜索长尾词，强化"这说的就是我"感知。</div><div class="good-proof">📌 《41岁大哥眼袋大过眼睛😨》《40+想变年轻的姐姐！从甘肃到广州做眼袋》</div></div></div>
   </div>
-
-  <!-- 广州号内容方向分布图 -->
-  <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">📊</div>
-      <div><div class="section-title">广州号 · 内容方向分布</div><div class="section-subtitle">164篇笔记的选题结构，科普+避坑是最大两个方向</div></div>
-    </div>
-    <div id="chartGZContent" class="chart"></div>
-  </div>
-
 </div>
 
-<!-- ════ TAB 4: 深圳号经验 ════ -->
+<!-- ══ TAB 深圳 ══ -->
 <div class="tab-section" id="shenzhen">
-
   <div class="account-strip shenzhen reveal">
     <div class="account-name">🌃 张德清祛眼袋｜总助理</div>
-    <div class="account-meta">深圳 · 桂之美 · 福利驱动聚焦型 · 18篇笔记 · 留资成本¥483</div>
+    <div class="account-meta">深圳 · 桂之美 · 福利驱动聚焦型 · 18篇笔记</div>
     <div class="account-kpis">
-      <div class="kpi-item"><div class="kpi-val" style="color:var(--orange)">18</div><div class="kpi-lbl">笔记数量</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">¥483</div><div class="kpi-lbl">留资成本</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:#fff">18.4</div><div class="kpi-lbl">篇均留资</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:var(--warn)">77.8%</div><div class="kpi-lbl">"不开刀"聚焦度</div></div>
-      <div class="kpi-item"><div class="kpi-val" style="color:var(--orange)">22.2%</div><div class="kpi-lbl">福利类笔记占比</div></div>
+      <div class="kpi-item"><div class="kpi-val">18.4</div><div class="kpi-lbl">篇均留资</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--warn)">22.2%</div><div class="kpi-lbl">福利笔记占比</div></div>
       <div class="kpi-item"><div class="kpi-val" style="color:var(--orange)">72%</div><div class="kpi-lbl">福利笔记留资贡献</div></div>
     </div>
   </div>
-
   <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">✨</div>
-      <div><div class="section-title">深圳号 · 内容做得好的地方</div><div class="section-subtitle">拆解18篇聚焦笔记的内容转化逻辑</div></div>
-    </div>
+    <div class="section-header"><div class="section-icon">✨</div><div><div class="section-title">深圳号 · 内容做得好的地方</div></div></div>
+    <div class="good-card"><div class="good-icon">🎁</div><div><div class="good-title">「专项补贴+福利」利益驱动，直接缩短决策周期</div><div class="good-desc">医美用户决策周期长，"补贴来了/名额有限"给观望用户一个立即进线的理由。4篇福利笔记（22%）贡献账号72%留资，效率极高。</div><div class="good-proof orange">📌 《【深圳】不开刀去眼袋专项补贴来啦~》→ 留资98个，成本¥462；《不开刀祛眼袋福利中~》→ 留资67个，成本¥441</div><div style="margin-top:8px"><span class="title-ex">【深圳】不开刀去眼袋专项补贴来啦~</span><span class="title-ex">2026不开刀去眼袋福利中</span></div></div></div>
+    <div class="good-card"><div class="good-icon">🎭</div><div><div class="good-title">「年龄段+地域」双重定位，精准锁定目标人群</div><div class="good-desc">"30+/50+阿姨/港姐"配合"来深圳"的双重定位，比单纯年龄定位更精准，更容易触发"这就是在写我"的感知，提升进线意愿。</div><div class="good-proof orange">📌 《30+港姐来深睇眼袋，遗传性眼袋不开刀》《50+阿姨 不开刀祛眼袋》</div></div></div>
+    <div class="good-card"><div class="good-icon">🎯</div><div><div class="good-title">高度聚焦单一术式，形成强认知心锚</div><div class="good-desc">78%笔记围绕"不开刀祛眼袋"，用户刷到任何一篇都在强化同一认知——账号=不开刀眼袋专家。一旦用户想做眼袋，第一个想到的就是这个账号。</div><div class="good-proof">📌 账号名称本身"张德清祛眼袋｜总助理"就明确术式，配合内容高聚焦，形成强认知绑定</div></div></div>
+  </div>
+</div>
 
-    <div class="good-card">
-      <div class="good-icon">🎁</div>
-      <div class="good-body">
-        <div class="good-title">「专项补贴+福利」利益驱动标题，直接触发转化行为</div>
-        <div class="good-desc">
-          深圳号最核心的内容策略：在标题层面直接给出利益承诺——<strong style="color:#fff">"专项补贴来啦""福利中""名额有限"</strong>。这类标题绕过了科普教育环节，直接瞄准已有意向的用户，降低其"等等再说"的拖延心理。医美决策周期长，利益驱动标题能有效提前缩短决策周期，让观望用户立即行动。
-        </div>
-        <div class="good-proof orange">
-          📌 <strong>数据佐证：</strong>4篇福利类笔记（占笔记总数22%）贡献了<strong>账号67%消耗和72%留资</strong>。其中最高效的《【深圳】不开刀去眼袋专项补贴来啦~》——98个留资，成本¥462；《不开刀祛眼袋福利中~》——67个留资，成本¥441（账号最低）。
-        </div>
-        <div style="margin-top:10px">
-          <span class="title-ex">【深圳】不开刀去眼袋专项补贴来啦~</span>
-          <span class="title-ex">不开刀祛眼袋福利中~</span>
-          <span class="title-ex">2026不开刀去眼袋福利中</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">🎭</div>
-      <div class="good-body">
-        <div class="good-title">「年龄段+地域」双重定位，精准锁定目标人群</div>
-        <div class="good-desc">
-          深圳号38.9%的标题包含人群定向词，且大量采用"年龄段+地域"双重定位：<strong style="color:#fff">30+、50+阿姨、港姐</strong>配合<strong style="color:#fff">"来深圳"</strong>，精准触达"我在深圳/香港附近、我是这个年龄、我有眼袋"的用户。这种双重定位比单纯的年龄定位更精准，也更容易触发"这就是在写我"的感知，进而提升进线意愿。
-        </div>
-        <div class="good-proof orange">
-          📌 <strong>代表标题：</strong>《30+长的像40?来深圳不开刀去眼袋，重返年轻》《30+港姐来深睇眼袋，遗传性眼袋不开刀去除》《50+阿姨 不开刀祛眼袋》——年龄+地域+术式三元素组合，意向人群精准过滤效果极佳。
-        </div>
-        <div style="margin-top:10px">
-          <span class="title-ex">30+长的像40?来深圳不开刀去眼袋</span>
-          <span class="title-ex">30+港姐来深睇眼袋，遗传性眼袋不开刀</span>
-          <span class="title-ex">50+阿姨 不开刀祛眼袋</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">🎬</div>
-      <div class="good-body">
-        <div class="good-title">「沉浸式记录+悬念结尾」内容形式，真实感强、带入感足</div>
-        <div class="good-desc">
-          深圳号有几篇内容采用了<strong style="color:#fff">沉浸式跟拍记录</strong>的叙事方式——"第1天是什么样""术后怎么样了"，制造时间线上的悬念，让用户产生追更欲望。这类内容用真实客户视角替代机构视角，降低广告感，提升信任感。"沉浸式观看"本身也是小红书用户喜欢的内容消费方式。
-        </div>
-        <div class="good-proof green">
-          📌 <strong>代表标题：</strong>《不开刀去眼袋第1天是什么样？沉浸式观看...》《50+阿姨，不开刀去眼袋后怎么样了？》——用"结果悬念"驱动点击，比直接展示术后照更吸引人停留。
-        </div>
-      </div>
-    </div>
-
-    <div class="good-card">
-      <div class="good-icon">🎯</div>
-      <div class="good-body">
-        <div class="good-title">高度聚焦单一术式，形成账号强认知心锚</div>
-        <div class="good-desc">
-          深圳号78%的笔记围绕"不开刀祛眼袋"这一核心术式，内容高度聚焦。用户刷到这个账号，不管看到哪篇都在强化同一个认知——<strong style="color:#fff">这个账号=不开刀祛眼袋专家</strong>。这种重复强化在用户建立决策时产生"心锚效应"：一旦想做眼袋，第一个想到的就是这个账号。聚焦度高的账号，在搜索结果中的权威感也更强。
-        </div>
-        <div class="good-proof">
-          📌 <strong>聚焦效果：</strong>账号名称本身"张德清<strong>祛眼袋</strong>｜总助理"就已明确术式，配合笔记内容的高度聚焦，用户对账号的定位认知非常清晰，有助于提升搜索时的主动找回率。
-        </div>
-      </div>
+<!-- ══ TAB 郑州柳燕 NEW ══ -->
+<div class="tab-section" id="zhengzhou">
+  <div class="account-strip zhengzhou reveal">
+    <div class="account-name">🌸 柳燕专注去眼袋｜助理 <span class="tag info">NEW · 效率最高</span></div>
+    <div class="account-meta">郑州 · 全流程透明化型 · 30篇笔记 · 六账号效率No.1</div>
+    <div class="account-kpis">
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">¥132</div><div class="kpi-lbl">留资成本</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">20.6</div><div class="kpi-lbl">篇均留资</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--cyan)">4.88%</div><div class="kpi-lbl">CTR</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--pink)">69.9%</div><div class="kpi-lbl">开口率</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">74.2%</div><div class="kpi-lbl">留资率</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">99.1%</div><div class="kpi-lbl">30s回复率</div></div>
     </div>
   </div>
-
-  <!-- 深圳号爆款笔记 -->
+  <div class="insight-box green reveal">
+    <p>🏆 <strong>郑州柳燕是本次新增三账号中的最大亮点</strong>——留资成本¥132是六账号最低，仅用30篇笔记就产出618个留资，效率碾压式领先。其内容策略具有高度可复制性，值得重点研究。</p>
+  </div>
   <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">🔥</div>
-      <div><div class="section-title">深圳号 · 高效笔记明细</div><div class="section-subtitle">4篇福利类笔记承担账号72%留资</div></div>
-    </div>
+    <div class="section-header"><div class="section-icon">✨</div><div><div class="section-title">郑州柳燕 · 内容做得好的地方</div><div class="section-subtitle">30篇笔记618留资——效率最高的内容方法论</div></div></div>
+
+    <div class="good-card"><div class="good-icon">🎬</div><div><div class="good-title">「客户真实视角」全流程记录，极强代入感和信任感</div><div class="good-desc">柳燕号最核心的内容形式：用真实客户的视角记录来院→面诊→手术→恢复的全流程。标题大量出现"独自来郑州""从东北跑来""考虑了一年终于"这类真实决策语言，让用户看到的不是广告而是"和我一样纠结的人的真实经历"。这种内容形式在小红书天然高互动、高信任，广告感极低。</div><div class="good-proof pink">📌 《考虑了一年，还是决定独自来郑州微创噶眼袋！》消耗¥7,577留资45个成本¥168<br>📌 《东北跑郑州，不想内切！不想外切！就想不开刀》消耗¥4,629留资39个成本¥119</div></div></div>
+
+    <div class="good-card"><div class="good-icon">🗺️</div><div><div class="good-title">「跨城就医」内容，打破地域限制扩大受众范围</div><div class="good-desc">多篇内容主打客户从外地专程来郑州的故事——东北、外省都有。这类内容传达两个信息：①这个机构值得专程来；②有外地客户的参考案例我也可以来。等于把潜在受众从郑州本地扩展到了全国有意向人群，搜索占比达29%也印证了这点。</div><div class="good-proof">📌 《东北跑郑州，不想内切！不想外切！就想不开刀》《跑那么远去眼袋，只为方案齐全不开刀！》</div></div></div>
+
+    <div class="good-card"><div class="good-icon">📋</div><div><div class="good-title">「方案科普+全类型覆盖」内容，建立专业全能形象</div><div class="good-desc">柳燕号建立了完整的知识内容体系：不开刀vs内切外切对比、微创全过程、18-60岁全年龄段方案、5个常见问题……不同纠结阶段的用户都能找到对应内容。这种全覆盖让账号在搜索结果中高频出现，也让用户形成"这个账号最专业"的认知。</div><div class="good-proof pink">📌 《18岁～60岁所有眼袋类型的方案都在这了❗️》《36秒讲清不开刀去眼袋🆚内切去眼袋区别》《不开刀去眼袋前5个问题必看❗️》</div><div style="margin-top:8px"><span class="title-ex">18岁～60岁所有眼袋类型方案都在这了❗️</span><span class="title-ex">36秒讲清不开刀🆚内切区别</span><span class="title-ex">不开刀去眼袋前5个问题必看❗️</span></div></div></div>
+
+    <div class="good-card"><div class="good-icon">⚡</div><div><div class="good-title">「年龄+具体场景」标题，精准命中不同生命周期人群</div><div class="good-desc">柳燕号的人群定向非常精准且有场景感："23岁毕业生为了找工作""27岁郑州原著民""50岁噶眼袋"——不仅有年龄，还有具体的生活场景（找工作、本地人、年龄显老），让用户感觉"这说的完全就是我的情况"。场景化人群比单纯年龄标签转化效率更高。</div><div class="good-proof pink">📌 《23岁毕业生，为了找工作提前噶眼袋》《27岁郑州原著民，眼袋越拖越大……》《50岁噶眼袋告别显老，就一个针眼》</div><div style="margin-top:8px"><span class="title-ex">23岁毕业生，为了找工作提前噶眼袋</span><span class="title-ex">50岁噶眼袋告别显老，就一个针眼</span></div></div></div>
+
+    <div class="good-card"><div class="good-icon">🔑</div><div><div class="good-title">「99.1%的30s回复率」——内容和承接协同打造极致转化漏斗</div><div class="good-desc">郑州柳燕的30秒回复率99.1%是六账号绝对最高，意味着几乎每一个进线的用户都能在30秒内得到响应。极速回复配合高质量的内容引导，让开口→留资的转化率高达74.2%。这说明优质内容吸引来的人群质量更高，同时后端承接能力也必须跟上。</div><div class="good-proof green">📌 留资率74.2%、30s回复率99.1%——两项均为六账号第一，说明内容质量和运营承接形成了正循环</div></div></div>
+  </div>
+  <div class="section-card reveal">
+    <div class="section-header"><div class="section-icon">🔥</div><div><div class="section-title">郑州柳燕 · Top笔记明细</div></div></div>
     <table>
-      <thead><tr><th>笔记标题</th><th>类型</th><th>消耗</th><th>留资</th><th>留资成本</th><th>CTR</th><th>开口率</th></tr></thead>
+      <thead><tr><th>笔记标题</th><th>消耗</th><th>留资</th><th>成本</th><th>CTR</th><th>开口率</th><th>搜索占比</th></tr></thead>
       <tbody>
-        <tr><td style="color:#fff">【深圳】不开刀去眼袋专项补贴来啦~</td><td><span class="tag orange">福利</span></td><td>¥45,239</td><td style="color:var(--success);font-weight:700">98</td><td style="color:var(--success)">¥462</td><td>1.98%</td><td>88.1%</td></tr>
-        <tr><td style="color:#fff">不开刀祛眼袋福利中~</td><td><span class="tag orange">福利</span></td><td>¥29,580</td><td style="color:var(--success);font-weight:700">67</td><td style="color:var(--success)">¥441</td><td>1.94%</td><td>75.4%</td></tr>
-        <tr><td style="color:#fff">2026不开刀去眼袋福利中</td><td><span class="tag orange">福利</span></td><td>¥31,150</td><td>53</td><td>¥588</td><td>1.54%</td><td>76.3%</td></tr>
-        <tr><td style="color:#fff">30+长的像40?来深圳不开刀去眼袋，重返年轻</td><td><span class="tag info">人群定向</span></td><td>¥13,001</td><td>25</td><td>¥520</td><td>3.62%</td><td>88.9%</td></tr>
-        <tr><td style="color:#fff">50+阿姨 不开刀祛眼袋</td><td><span class="tag info">人群定向</span></td><td>¥7,829</td><td>22</td><td>¥356</td><td>2.14%</td><td>80.0%</td></tr>
+        <tr><td style="color:#fff">23岁遗传性大眼袋，不动刀看看怎么改善❓</td><td>¥27,720</td><td style="color:var(--success);font-weight:700">217</td><td style="color:var(--success)">¥128</td><td>4.56%</td><td>73.3%</td><td>22.0%</td></tr>
+        <tr><td style="color:#fff">嗨～我是不开刀去眼袋～柳燕👋</td><td>¥19,361</td><td style="color:var(--success);font-weight:700">175</td><td style="color:var(--success)">¥111</td><td>5.15%</td><td>62.8%</td><td>21.5%</td></tr>
+        <tr><td style="color:#fff">微创时代❗️微创去眼袋❗️了解操作全过程～</td><td>¥8,666</td><td>60</td><td>¥144</td><td>5.28%</td><td>83.2%</td><td>22.5%</td></tr>
+        <tr><td style="color:#fff">考虑了一年，还是决定独自来郑州微创噶眼袋！</td><td>¥7,577</td><td>45</td><td>¥168</td><td>4.63%</td><td>81.5%</td><td style="color:var(--success)">52.1%</td></tr>
+        <tr><td style="color:#fff">东北跑郑州，不想内切！不想外切！就想不开刀</td><td>¥4,629</td><td>39</td><td style="color:var(--success)">¥119</td><td>3.52%</td><td>79.7%</td><td>5.8%</td></tr>
       </tbody>
     </table>
   </div>
-
 </div>
 
-<!-- ════ TAB 5: 可复用方法论 ════ -->
+<!-- ══ TAB 朱冠峰小助理 NEW ══ -->
+<div class="tab-section" id="zhuguan1">
+  <div class="account-strip zhuguan reveal">
+    <div class="account-name">💫 朱冠峰小助理 <span class="tag info">NEW</span></div>
+    <div class="account-meta">深圳 · 佳袋医美 · 记录型高频投放 · 78篇笔记 · 总留资968个（六账号最高）</div>
+    <div class="account-kpis">
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--warn)">968</div><div class="kpi-lbl">总留资</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--success)">¥323</div><div class="kpi-lbl">留资成本</div></div>
+      <div class="kpi-item"><div class="kpi-val">12.4</div><div class="kpi-lbl">篇均留资</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--cyan)">4.66%</div><div class="kpi-lbl">CTR</div></div>
+      <div class="kpi-item"><div class="kpi-val">57.6%</div><div class="kpi-lbl">开口率</div></div>
+      <div class="kpi-item"><div class="kpi-val">81.6%</div><div class="kpi-lbl">15s回复率</div></div>
+    </div>
+  </div>
+  <div class="section-card reveal">
+    <div class="section-header"><div class="section-icon">✨</div><div><div class="section-title">朱冠峰小助理 · 内容做得好的地方</div><div class="section-subtitle">78篇笔记968留资——靠量取胜的高频记录型内容策略</div></div></div>
+
+    <div class="good-card"><div class="good-icon">🎬</div><div><div class="good-title">「术后第一天/恢复vlog」记录型内容，用真实过程建立信任</div><div class="good-desc">朱冠峰小助理最高效的内容形式是术后记录类——"去完眼袋第一天""不开刀去眼袋术后第一天""眼袋术后一个月对比"。这类内容解决了用户最核心的顾虑：<strong style="color:#fff">做完以后是什么样？恢复期看起来怎么样？</strong>真实的术后状态比任何文案都更有说服力，特别适合处于"想做但怕"阶段的潜在用户。</div><div class="good-proof green">📌 《去完眼袋第一天》→ 最高留资224个，消耗¥61,584，成本¥275——账号留资量最高单篇</div><div style="margin-top:8px"><span class="title-ex">去完眼袋第一天</span><span class="title-ex">不开刀去眼袋术后第一天</span><span class="title-ex">眼袋术后一个月对比</span><span class="title-ex">去眼袋半个月恢复效果</span></div></div></div>
+
+    <div class="good-card"><div class="good-icon">📦</div><div><div class="good-title">「高频铺量」策略，用规模效应覆盖广泛流量</div><div class="good-desc">78篇笔记是六账号中最多的，且绝大多数标题都是"不开刀去眼袋"同一主题的变体（配合不同的封面/内容）。这种"同一关键词高频投放"的策略，在搜索结果页中能形成多条目霸屏效果——用户搜"不开刀去眼袋"能看到多条来自同一账号的结果，大幅提升曝光占比和点击概率。</div><div class="good-proof">📌 78篇笔记累计总留资968个（六账号最高），消耗¥31.3万——规模效应成立</div></div></div>
+
+    <div class="good-card"><div class="good-icon">🌍</div><div><div class="good-title">「跨地域客户」内容，突破本地受众限制</div><div class="good-desc">"去深圳把眼袋噶了""80后香港大叔嘎眼袋的vlog"——通过展示跨城/跨地域客户的案例，既证明了机构的吸引力足以让人特地前来，也向外地潜在用户传递"来深圳做是可行的"信号。港澳客群标签还能触达特定的高消费力人群。</div><div class="good-proof">📌 《去深圳把眼袋噶了》《80后香港大叔嘎眼袋的vlog》——地域/身份标签强化机构吸引力</div></div></div>
+
+    <div class="good-card"><div class="good-icon">✨</div><div><div class="good-title">「效果对比」视觉内容，做完眼袋的视觉冲击直接驱动决策</div><div class="good-desc">"不开刀去眼袋效果有多牛""做完眼袋十天变化""不开刀去眼袋四个月恢复效果"——效果对比类内容用before/after视觉对比直接回答用户"做完到底好不好看"的核心问题，决策驱动力最强，对处于考虑晚期的用户特别有效。</div><div class="good-proof green">📌 《不开刀去眼袋效果有多牛》《做完眼袋十天变化》《不开刀去眼袋四个月恢复效果》——效果类标题CTR均值高于账号均值</div></div></div>
+  </div>
+  <div class="section-card reveal">
+    <div class="section-header"><div class="section-icon">🔥</div><div><div class="section-title">朱冠峰小助理 · Top笔记明细</div></div></div>
+    <table>
+      <thead><tr><th>笔记标题</th><th>消耗</th><th>留资</th><th>成本</th><th>CTR</th><th>开口率</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#fff">去完眼袋第一天</td><td>¥61,584</td><td style="color:var(--success);font-weight:700">224</td><td style="color:var(--success)">¥275</td><td style="color:var(--success)">5.33%</td><td>59.1%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋（主力款）</td><td>¥36,879</td><td style="color:var(--success);font-weight:700">114</td><td>¥324</td><td>2.03%</td><td>65.6%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋（高CTR款）</td><td>¥29,530</td><td>96</td><td>¥308</td><td>5.01%</td><td>46.5%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋（高转化款）</td><td>¥25,375</td><td>76</td><td>¥334</td><td>5.05%</td><td>66.4%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋</td><td>¥20,282</td><td>53</td><td>¥383</td><td>2.40%</td><td>51.0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ TAB 朱冠峰助理2 NEW ══ -->
+<div class="tab-section" id="zhuguan2">
+  <div class="account-strip zhuguan2 reveal">
+    <div class="account-name">🔥 不开刀去眼袋｜朱冠峰助理 <span class="tag info">NEW</span></div>
+    <div class="account-meta">深圳 · 佳袋医美 · 术式聚焦强化型 · 55篇笔记</div>
+    <div class="account-kpis">
+      <div class="kpi-item"><div class="kpi-val">¥334</div><div class="kpi-lbl">留资成本</div></div>
+      <div class="kpi-item"><div class="kpi-val">205</div><div class="kpi-lbl">总留资</div></div>
+      <div class="kpi-item"><div class="kpi-val" style="color:var(--cyan)">3.54%</div><div class="kpi-lbl">CTR</div></div>
+      <div class="kpi-item"><div class="kpi-val">53.3%</div><div class="kpi-lbl">开口率</div></div>
+      <div class="kpi-item"><div class="kpi-val">49.4%</div><div class="kpi-lbl">留资率</div></div>
+    </div>
+  </div>
+  <div class="section-card reveal">
+    <div class="section-header"><div class="section-icon">✨</div><div><div class="section-title">朱冠峰助理2 · 内容做得好的地方</div><div class="section-subtitle">55篇聚焦笔记——术式认知深度强化的内容策略</div></div></div>
+
+    <div class="good-card"><div class="good-icon">🎯</div><div><div class="good-title">「账号名即广告语」——术式关键词直接嵌入账号名</div><div class="good-desc">账号名"不开刀去眼袋｜朱冠峰助理"本身就是一条完整的搜索广告：包含核心术式"不开刀去眼袋"和医生名"朱冠峰"。用户搜索"不开刀去眼袋"时，账号名直接出现在搜索结果中，即便不点击也完成了一次曝光和记忆。这是账号命名层面的内容策略，值得所有KOS账号借鉴。</div><div class="good-proof">📌 账号名=核心转化词+医生背书，是内容体系外最低成本的认知建立方式</div></div></div>
+
+    <div class="good-card"><div class="good-icon">💡</div><div><div class="good-title">「通俗化体验描述」标题，把技术细节变成用户能感知的画面</div><div class="good-desc">该账号大量使用具体化、可感知的体验描述替代抽象技术词：<strong style="color:#fff">"不开刀去眼袋只要20分钟""一个针眼搞定""真的不用动刀""67岁的眼袋如何消失"</strong>。数字（20分钟）、极简描述（一个针眼）、年龄+场景（67岁），三种方式都在回答用户核心问题：做这个到底有多简单/多快/创伤有多小？</div><div class="good-proof green">📌 《不开刀去眼袋只要20分钟》《不开刀去眼袋一个针眼搞定》《真的不用动刀，就能去除眼袋》</div><div style="margin-top:8px"><span class="title-ex">不开刀去眼袋只要20分钟</span><span class="title-ex">不开刀去眼袋一个针眼搞定</span><span class="title-ex">真的不用动刀，就能去除眼袋</span></div></div></div>
+
+    <div class="good-card"><div class="good-icon">👤</div><div><div class="good-title">「脂肪型/遗传型/天生」眼袋分型内容，细化人群匹配精准度</div><div class="good-desc">该账号多篇内容明确标注眼袋类型——"脂肪型的眼袋""遗传的眼袋不见啦""天生遗传的眼袋""天生的眼袋加上熬夜导致的大眼袋"。这种分型内容让有相同问题的用户立即产生强烈共鸣："这说的就是我的眼袋类型！"，同时覆盖了更多搜索长尾词（"遗传性眼袋怎么去""脂肪型眼袋怎么处理"）。</div><div class="good-proof">📌 《脂肪型的眼袋》《遗传的眼袋不见啦》《天生的眼袋加上熬夜导致的大眼袋》《天生遗传的眼袋》</div></div></div>
+
+    <div class="good-card"><div class="good-icon">🔁</div><div><div class="good-title">「和眼袋说拜拜」情感句式，用轻松语气降低医美严肃感</div><div class="good-desc">"大大的眼袋拜拜""和你的眼袋说拜拜""和眼袋说拜拜啦""大大的眼袋不见啦"——这组标题用轻松、愉快的口吻表达"做完就好了"的结果，区别于严肃的医疗语言，让用户感受到做眼袋是一件轻松愉快的事。搭配"靓仔的眼袋""眼袋重生拯救记"等带娱乐感的标题，整体内容调性年轻、亲切。</div><div class="good-proof green">📌 《大大的眼袋拜拜》《和你的眼袋说拜拜》《眼袋重生拯救记》——轻松化调性降低决策门槛</div></div></div>
+  </div>
+  <div class="section-card reveal">
+    <div class="section-header"><div class="section-icon">🔥</div><div><div class="section-title">朱冠峰助理2 · Top笔记明细</div></div></div>
+    <table>
+      <thead><tr><th>笔记标题</th><th>消耗</th><th>留资</th><th>成本</th><th>CTR</th><th>开口率</th></tr></thead>
+      <tbody>
+        <tr><td style="color:#fff">天生的眼袋和黑眼圈</td><td>¥13,933</td><td style="color:var(--success);font-weight:700">41</td><td>¥340</td><td>2.94%</td><td>59.4%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋（主力款）</td><td>¥12,256</td><td>39</td><td>¥314</td><td>3.03%</td><td>52.9%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋（低成本款）</td><td>¥4,642</td><td>21</td><td style="color:var(--success)">¥221</td><td>2.77%</td><td>55.7%</td></tr>
+        <tr><td style="color:#fff">不开刀去眼袋（高搜索款）</td><td>¥1,717</td><td>13</td><td style="color:var(--success)">¥132</td><td style="color:var(--success)">6.01%</td><td>75.0%</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ TAB 方法论 ══ -->
 <div class="tab-section" id="methods">
-
   <div class="insight-box green reveal">
-    <p>💡 以下内容方法论均来自三账号的实际数据验证，可直接作为其他眼袋赛道账号的内容参考框架。每条方法论均附有对应账号的数据证据。</p>
+    <p>💡 以下内容方法论均来自六账号的实际数据验证，可直接作为其他眼袋赛道账号的内容参考框架。新增三账号（郑州柳燕、朱冠峰两个号）贡献了3条新方法论。</p>
   </div>
 
-  <!-- 方法论卡片 -->
-  <div class="method-card reveal">
-    <div class="method-num">01</div>
+  <div class="divider-label reveal">原有方法论（前三账号验证）</div>
+
+  <div class="method-card reveal"><div class="method-num">01</div>
     <div class="method-label beijing">来自 北京号</div>
-    <div class="method-title">「地域词+多痛点并列」——搜索承接场景下的标题黄金公式</div>
-    <div class="method-desc">
-      在用户主动搜索"XX眼袋"的场景中，把地域词+多个痛点词（眼袋、泪沟、黑眼圈）并列放在标题里，可以同时命中多个搜索词，最大化曝光机会。并列痛点还能激发"这也是我的问题"的多重共鸣，提升点击意愿。这是搜索流量场景里经过验证的最高效标题结构。
-    </div>
-    <div class="method-example">
-      <strong>公式：</strong>[城市词] + [主痛点] + [并列痛点] + [指向性召唤词/emoji]<br>
-      <strong>验证标题：</strong>《大数据推<strong>北京</strong>有<strong>眼袋+泪沟黑眼圈</strong>的姐妹🙋》→ 留资成本¥367，留资242个<br>
-      <strong>可参考变体：</strong>《上海有眼袋+泪沟的姐妹进来》/ 《杭州有眼袋+眼部浮肿的姐妹看一看》
-    </div>
-    <div style="margin-top:8px">
-      <span class="ref-tag beijing">✅ 北京号验证</span>
-      <span class="tag success" style="margin:2px">搜索场景优先</span>
-      <span class="tag info" style="margin:2px">地域账号必备</span>
-    </div>
+    <div class="method-title">「地域+多痛点并列」——搜索承接场景的黄金标题公式</div>
+    <div class="method-desc">把城市词+多个痛点词并列进标题，同时命中多个搜索词，最大化曝光。并列痛点触发"这也是我的问题"的多重共鸣。</div>
+    <div class="method-example"><strong>公式：</strong>[城市词] + [主痛点] + [并列痛点] + [召唤词/emoji]<br><strong>验证：</strong>《大数据推北京有眼袋+泪沟黑眼圈的姐妹🙋》→ 留资242个，成本¥367</div>
+    <span class="ref-tag beijing">✅ 北京号</span><span class="tag info" style="margin:2px">搜索场景优先</span>
   </div>
 
-  <div class="method-card reveal">
-    <div class="method-num">02</div>
-    <div class="method-label shenzhen">来自 深圳号</div>
-    <div class="method-title">「福利/补贴」标题——缩短高意向用户的决策周期</div>
-    <div class="method-desc">
-      医美用户决策周期长，处于"考虑中"阶段的潜在用户最怕的是"现在进线会不会被催单""没想好会不会尴尬"。而"补贴来了""福利名额有限"的标题给了他们一个立即进线的理由：不是因为我想做了，而是因为"现在有优惠"。这种标题策略特别适合在搜索+推荐混合场景中，对已经了解过术式、处于决策最后一公里的用户发力。
-    </div>
-    <div class="method-example">
-      <strong>核心词汇：</strong>专项补贴 / 福利 / 限时 / 名额 / 特惠 / 减免<br>
-      <strong>验证标题：</strong>《【深圳】不开刀去眼袋<strong>专项补贴来啦</strong>~》→ 留资98个，成本¥462<br>
-      <strong>最佳使用时机：</strong>配合真实活动节点（开业/周年/节日/淡旺季），给利益承诺一个合理背景
-    </div>
-    <div style="margin-top:8px">
-      <span class="ref-tag shenzhen">✅ 深圳号验证</span>
-      <span class="tag orange" style="margin:2px">推荐+搜索均适用</span>
-      <span class="tag warn" style="margin:2px">高意向人群加速转化</span>
-    </div>
+  <div class="method-card reveal"><div class="method-num">02</div>
+    <div class="method-label shenzhen">来自 深圳张德清号</div>
+    <div class="method-title">「福利/补贴」标题——缩短高意向用户的最后决策</div>
+    <div class="method-desc">医美用户最怕"没想好被催单"，"补贴来了/名额有限"给了他们立即进线的理由而不是自己主动决定的压力。4篇福利笔记贡献72%留资。</div>
+    <div class="method-example"><strong>核心词：</strong>专项补贴 / 福利 / 限时 / 特惠<br><strong>验证：</strong>《不开刀祛眼袋福利中~》→ 留资67个，成本¥441</div>
+    <span class="ref-tag shenzhen">✅ 深圳张德清</span><span class="tag orange" style="margin:2px">高意向人群加速转化</span>
   </div>
 
-  <div class="method-card reveal">
-    <div class="method-num">03</div>
-    <div class="method-label all">三账号均验证</div>
-    <div class="method-title">通俗化技术话术——把专业术式变成用户听得懂的承诺</div>
-    <div class="method-desc">
-      三个账号都避免了直接把医学术语塞进标题，而是把术式转化为用户最关心的体验维度。"不开刀"传达创伤小，"不叨叨"传达无尴尬/无恢复期，"仅需一个微孔"传达创口极小，"20分钟"传达时间短。这类话术让用户在看标题的瞬间就能感知到手术的便捷和低风险，是降低医美决策门槛的核心内容技巧。
-    </div>
-    <div class="method-example">
-      <strong>各账号验证话术：</strong><br>
-      北京号：「不叨叨」「钻石精雕」「联合改善」<br>
-      广州号：「仅需一个微孔」「不开🔪」「20分钟」<br>
-      深圳号：「不开刀」「当天可回家」<br>
-      <strong>共同逻辑：</strong>用<strong>具体体验数字/场景描述</strong>替代抽象技术名称，让用户知道"做了以后是什么感受"
-    </div>
-    <div style="margin-top:8px">
-      <span class="ref-tag beijing">✅ 北京号</span>
-      <span class="ref-tag guangzhou">✅ 广州号</span>
-      <span class="ref-tag shenzhen">✅ 深圳号</span>
-    </div>
+  <div class="method-card reveal"><div class="method-num">03</div>
+    <div class="method-label all">六账号均验证</div>
+    <div class="method-title">通俗化技术话术——把专业术式变成用户能感知的承诺</div>
+    <div class="method-desc">避免医学术语，改用具体体验数字/场景描述：不叨叨=无尴尬期，仅需一个微孔=创口极小，20分钟=手术快，一个针眼搞定=创伤低。</div>
+    <div class="method-example"><strong>各账号话术：</strong>北京「不叨叨」/ 广州「仅需一个微孔+20分钟」/ 深圳「当天可回家」/ 助理2「一个针眼搞定」</div>
+    <span class="ref-tag beijing">✅ 北京</span><span class="ref-tag guangzhou">✅ 广州</span><span class="ref-tag shenzhen">✅ 深圳</span><span class="ref-tag zhuguan">✅ 朱冠峰两账号</span>
   </div>
 
-  <div class="method-card reveal">
-    <div class="method-num">04</div>
+  <div class="method-card reveal"><div class="method-num">04</div>
     <div class="method-label guangzhou">来自 广州号</div>
     <div class="method-title">「科普+避坑」组合拳——用专业内容建立长期信任</div>
-    <div class="method-desc">
-      科普内容（教用户分辨真假眼袋、了解不同术式区别）帮助用户形成正确认知，同时建立账号的专业权威感；避坑内容（告诉用户做错了会怎样、不分清就踩坑）激发用户的危机感和主动咨询意愿。两者并用时，用户在进线之前已经接受了充分的教育，开口率和转化率相对更高。这套内容模型特别适合品牌建立期或新号冷启动。
-    </div>
-    <div class="method-example">
-      <strong>科普选题方向：</strong>真假眼袋怎么判断 / 眼袋和泪沟的区别 / 不同术式的适应人群 / 术后恢复过程<br>
-      <strong>避坑选题方向：</strong>填充泪沟会怎样 / 随便做手术的后果 / 疤痕体质注意事项 / 选错机构的风险<br>
-      <strong>验证标题：</strong>《避坑！祛眼袋前一定要分清真假眼袋！》《95%的人都做错了！有泪沟直接填充❓》
-    </div>
-    <div style="margin-top:8px">
-      <span class="ref-tag guangzhou">✅ 广州号验证</span>
-      <span class="tag cyan" style="margin:2px">新号冷启动适用</span>
-      <span class="tag info" style="margin:2px">提升开口质量</span>
-    </div>
+    <div class="method-desc">科普建立权威感，避坑激发危机感，两者配合覆盖用户决策链的"了解期"，适合新号冷启动或品牌建立期。</div>
+    <div class="method-example"><strong>科普方向：</strong>真假眼袋 / 眼袋vs泪沟 / 不同术式适应人群<br><strong>避坑方向：</strong>填充泪沟后果 / 疤痕体质注意事项</div>
+    <span class="ref-tag guangzhou">✅ 广州号</span><span class="tag cyan" style="margin:2px">新号冷启动适用</span>
   </div>
 
-  <div class="method-card reveal">
-    <div class="method-num">05</div>
-    <div class="method-label all">三账号均验证</div>
-    <div class="method-title">「年龄段+人群特征」定向标题——让对的人看到对的内容</div>
-    <div class="method-desc">
-      在标题中明确写出目标人群的年龄/特征，既能在搜索中命中"30+眼袋""50岁眼袋"等长尾词，又能在推荐流中让符合条件的用户立即产生"这是在说我"的点击冲动。人群定向标题有天然的过滤功能：不符合的用户不会点击，点击的用户意向精准度高，进线后的开口率和留资率也更高。
-    </div>
-    <div class="method-example">
-      <strong>公式：</strong>[年龄段/特征] + [痛点或场景] + [解决方案]<br>
-      <strong>验证标题：</strong>《41岁大哥眼袋大过眼睛😨你能忍住不噶？》《30+港姐来深睇眼袋，遗传性眼袋不开刀去除》<br>
-      <strong>可扩展方向：</strong>30+上班族 / 产后妈妈 / 遗传型 / 男士眼袋 / 60+阿姨 / 双眼皮+眼袋联合
-    </div>
-    <div style="margin-top:8px">
-      <span class="ref-tag beijing">✅ 北京号</span>
-      <span class="ref-tag guangzhou">✅ 广州号</span>
-      <span class="ref-tag shenzhen">✅ 深圳号</span>
-      <span class="tag warn" style="margin:2px">长尾搜索覆盖</span>
-    </div>
+  <div class="divider-label reveal">新增方法论（新三账号验证）</div>
+
+  <div class="method-card reveal"><div class="method-num">05</div>
+    <div class="method-label zhengzhou">来自 郑州柳燕 🆕</div>
+    <div class="method-title">「客户真实视角」全流程记录——用决策故事替代机构宣传</div>
+    <div class="method-desc">用真实客户的纠结→决定→来院→恢复完整故事替代机构自说自话。"考虑了一年""独自来郑州""东北跑来"这类真实决策语言，让潜在用户产生强烈代入感，广告感极低，信任感极强。这是郑州柳燕留资成本¥132的核心内容驱动力。</div>
+    <div class="method-example"><strong>验证标题：</strong>《考虑了一年，还是决定独自来郑州微创噶眼袋！》成本¥168<br>《东北跑郑州，不想内切！不想外切！就想不开刀》成本¥119<br><strong>适用场景：</strong>任何城市KOS账号均可复用，只需替换城市词</div>
+    <span class="ref-tag zhengzhou">✅ 郑州柳燕</span><span class="tag pink" style="margin:2px">效率最高方法论</span><span class="tag success" style="margin:2px">强信任感</span>
   </div>
 
-  <div class="method-card reveal">
-    <div class="method-num">06</div>
-    <div class="method-label guangzhou">来自 广州号</div>
-    <div class="method-title">系列化栏目内容——把单次爆款变成可复制的内容模板</div>
-    <div class="method-desc">
-      固定的栏目句式（"一篇全解""建议收藏""仅需一个微孔"）让每次出新内容都不需要重新构思角度，只需要换填充主题。同时，固定栏目让用户对账号形成内容预期——"这个账号出'一篇全解'系列，都是干货"，提升账号的收藏和复看率，有助于在用户决策时被主动搜索回来。
-    </div>
-    <div class="method-example">
-      <strong>广州号验证栏目：</strong><br>
-      「一篇全解」系列 × 4篇（真假眼袋 / 眼袋vs泪沟 / 疤痕体质能否做 / 术后护理）<br>
-      「仅需一个微孔」系列 × 4篇<br>
-      「建议收藏」系列 × 3篇<br>
-      <strong>建立方法：</strong>选定2-3个固定开头句式，按不同主题持续产出，形成内容系列感
-    </div>
-    <div style="margin-top:8px">
-      <span class="ref-tag guangzhou">✅ 广州号验证</span>
-      <span class="tag success" style="margin:2px">提升账号收藏率</span>
-      <span class="tag info" style="margin:2px">降低选题成本</span>
-    </div>
+  <div class="method-card reveal"><div class="method-num">06</div>
+    <div class="method-label zhengzhou">来自 郑州柳燕 🆕</div>
+    <div class="method-title">「年龄+具体生活场景」——比单纯年龄标签更精准的人群定位</div>
+    <div class="method-desc">不只是"23岁眼袋"，而是"23岁毕业生为了找工作"——加入具体生活场景后，目标用户的共鸣感从"年龄相近"升级为"情况完全一样"，转化效率显著更高。场景化人群是人群定向内容的进阶版。</div>
+    <div class="method-example"><strong>公式：</strong>[年龄] + [具体生活场景/状态] + [痛点或动作]<br><strong>验证：</strong>《23岁毕业生，为了找工作提前噶眼袋》《27岁郑州原著民，眼袋越拖越大……》《50岁噶眼袋告别显老，就一个针眼》</div>
+    <span class="ref-tag zhengzhou">✅ 郑州柳燕</span><span class="tag warn" style="margin:2px">搜索+推荐双适用</span>
   </div>
 
-  <!-- 方法论汇总图 -->
-  <div class="section-card reveal">
-    <div class="section-header">
-      <div class="section-icon">📊</div>
-      <div><div class="section-title">六大方法论 · 适用场景与来源账号</div><div class="section-subtitle">快速查阅哪条方法适合你的账号阶段</div></div>
-    </div>
-    <div id="chartMethods" class="chart-tall"></div>
+  <div class="method-card reveal"><div class="method-num">07</div>
+    录型内容——解答"做完是什么感觉"的核心顾虑</div>
+    <div class="method-desc">术后第一天/N天恢复/几个月对比，用真实时间线解答用户"做完以后到底是什么状态"的最核心顾虑。这类内容比结果图更有说服力，因为用户需要看到"恢复过程"而不只是"最终效果"。</div>
+    <div class="method-example"><strong>内容形式：</strong>术后第一天 / 术后N天变化 / 恢复对比 / 几个月后效果<br><strong>验证：</strong>《去完眼袋第一天》→ 留资224个（账号最高单篇），成本¥275<br><strong>注意：</strong>封面要展示真实的术后状态（轻微肿胀），避免过度美化，真实感是关键</div>
+    <span class="ref-tag zhuguan">✅ 朱冠峰小助理</span><span class="tag cyan" style="margin:2px">决策晚期用户有效</span>
   </div>
 
-</div>
-</div><!-- /container -->
-</div>
+  <div class="method-card reveal"><div class="method-num">08</div>
+    <div class="method-label zhuguan">来自 朱冠峰助理2 🆕</div>
+    <div class="method-title">「账号名=核心转化词」——命名层面的免费广告</div>
+    <div class="method-desc">账号名直接包含核心术式关键词和医生名，用户搜索"不开刀去眼袋"时，账号名就出现在搜索结果中。这是成本最低的认知建立方式——每一次曝光都是一次关键词强化，即便用户没点击也完成了记忆植入。</div>
+    <div class="method-example"><strong>验证账号名：</strong>"不开刀去眼袋｜朱冠峰助理"<br><strong>命名公式：</strong>[核心术式关键词] ｜ [医生/机构名] + [角色]<br><strong>可参考变体：</strong>"微创去眼袋｜XX医生助理" / "郑州不开刀眼袋｜XX助手"</div>
+    <span class="ref-tag zhuguan">✅ 朱冠峰助理2</span><span class="tag info" style="margin:2px">零成本认知建立</span>
+  </div>
 
-<div class="footer">
-  生成时间：2026-05-20 &nbsp;·&nbsp; 数据来源：眼袋KOS投放笔记明细 + 账号明细 &nbsp;·&nbsp; 雪粒粒 ❄️ for 浅雪姐姐
-</div>
+</div><!-- /methods -->
+
+</div></div><!-- /container /padding -->
+
+<div class="footer">生成时间：2026-05-20 &nbsp;·&nbsp; 数据来源：眼袋KOS投放笔记明细+账号明细（六账号合并版）&nbsp;·&nbsp; 雪粒粒 ❄️ for 浅雪姐姐</div>
 
 <script>
-function switchTab(id) {
+function switchTab(id){
   document.querySelectorAll('.tab-section').forEach(function(s){s.classList.remove('active')});
   document.querySelectorAll('.nav-inner a').forEach(function(a){a.classList.remove('active')});
   document.getElementById(id).classList.add('active');
   document.getElementById('nav-'+id).classList.add('active');
-  setTimeout(function(){ _charts.forEach(function(c){c.resize()}); }, 100);
+  setTimeout(function(){_charts.forEach(function(c){c.resize()})},100);
 }
 (function(){
   if('IntersectionObserver' in window){
@@ -782,113 +490,66 @@ function switchTab(id) {
 })();
 
 var _charts=[];
-var EC_BG='transparent';
-var TT={backgroundColor:'#1e2330',textStyle:{color:'#e2e8f0'},borderColor:'#252a3a'};
+var BG='transparent', TT={backgroundColor:'#1e2330',textStyle:{color:'#e2e8f0'},borderColor:'#252a3a'};
 var AX='#1e2330', LB='#94a3b8';
 
 window.addEventListener('load',function(){
 
-  // 消耗 vs 留资
-  var c1=echarts.init(document.getElementById('chartCost'));
+  // 六账号效率对比 - 气泡/柱图
+  var c1=echarts.init(document.getElementById('chartOverview'));
   _charts.push(c1);
   c1.setOption({
-    backgroundColor:EC_BG,
+    backgroundColor:BG,
     tooltip:Object.assign({trigger:'axis'},TT),
-    legend:{data:['消耗(万元)','留资量'],textStyle:{color:LB},top:4},
-    grid:{left:'3%',right:'5%',bottom:'10%',top:'14%',containLabel:true},
-    xAxis:{type:'category',data:['北京号(欧扬)','深圳号(张德清)','广州号(范丹)'],
-      axisLine:{lineStyle:{color:AX}},axisLabel:{color:LB,fontSize:11}},
+    legend:{data:['留资成本(元)','总留资量'],textStyle:{color:LB},top:4},
+    grid:{left:'3%',right:'6%',bottom:'12%',top:'14%',containLabel:true},
+    xAxis:{type:'category',
+      data:['郑州柳燕','北京欧扬','深圳张德清','朱冠峰小助理','朱冠峰助理2','广州范丹'],
+      axisLine:{lineStyle:{color:AX}},axisLabel:{color:LB,fontSize:10,rotate:10}},
     yAxis:[
-      {type:'value',name:'消耗(万)',nameTextStyle:{color:LB},splitLine:{lineStyle:{color:AX}},axisLabel:{color:LB}},
-      {type:'value',name:'留资量',nameTextStyle:{color:LB},splitLine:{show:false},axisLabel:{color:LB}}
+      {type:'value',name:'留资成本(元)',nameTextStyle:{color:LB,fontSize:10},splitLine:{lineStyle:{color:AX}},axisLabel:{color:LB}},
+      {type:'value',name:'总留资量',nameTextStyle:{color:LB,fontSize:10},splitLine:{show:false},axisLabel:{color:LB}}
     ],
     series:[
-      {name:'消耗(万元)',type:'bar',barGap:'20%',data:[
-        {value:12.9,itemStyle:{color:'#6366f1',borderRadius:[4,4,0,0]}},
-        {value:16.0,itemStyle:{color:'#fb923c',borderRadius:[4,4,0,0]}},
-        {value:19.6,itemStyle:{color:'#34d399',borderRadius:[4,4,0,0]}}
-      ],yAxisIndex:0,label:{show:true,position:'top',color:LB,fontSize:11,formatter:'¥{c}万'}},
-      {name:'留资量',type:'bar',data:[
-        {value:354,itemStyle:{color:'#818cf8',borderRadius:[4,4,0,0]}},
-        {value:331,itemStyle:{color:'#fbbf24',borderRadius:[4,4,0,0]}},
-        {value:189,itemStyle:{color:'#22d3ee',borderRadius:[4,4,0,0]}}
-      ],yAxisIndex:1,label:{show:true,position:'top',color:LB,fontSize:11,formatter:'{c}个'}}
+      {name:'留资成本(元)',type:'bar',yAxisIndex:0,
+        data:[
+          {value:132,itemStyle:{color:'#34d399',borderRadius:[4,4,0,0]}},
+          {value:364,itemStyle:{color:'#6366f1',borderRadius:[4,4,0,0]}},
+          {value:483,itemStyle:{color:'#fb923c',borderRadius:[4,4,0,0]}},
+          {value:323,itemStyle:{color:'#22d3ee',borderRadius:[4,4,0,0]}},
+          {value:334,itemStyle:{color:'#f87171',borderRadius:[4,4,0,0]}},
+          {value:1040,itemStyle:{color:'#818cf8',borderRadius:[4,4,0,0]}}
+        ],
+        label:{show:true,position:'top',color:LB,fontSize:10,formatter:'¥{c}'}},
+      {name:'总留资量',type:'line',yAxisIndex:1,
+        data:[618,354,331,968,205,189],
+        lineStyle:{color:'#fbbf24',width:2},
+        itemStyle:{color:'#fbbf24'},symbol:'circle',symbolSize:7}
     ]
   });
 
-  // 雷达
+  // 雷达图
   var c2=echarts.init(document.getElementById('chartRadar'));
   _charts.push(c2);
   c2.setOption({
-    backgroundColor:EC_BG,
-    legend:{data:['北京号','深圳号','广州号'],textStyle:{color:LB},top:4},
+    backgroundColor:BG,
+    legend:{data:['郑州柳燕','北京欧扬','深圳张德清','朱冠峰小助理'],textStyle:{color:LB,fontSize:10},top:2,
+      itemWidth:10,itemHeight:10},
     radar:{
       indicator:[
-        {name:'篇均留资',max:30},{name:'平均CTR(%)',max:10},{name:'开口率(%)',max:100},{name:'留资率(%)',max:100},{name:'搜索占比(%)',max:100}
+        {name:'CTR(%)',max:6},{name:'开口率(%)',max:100},{name:'留资率(%)',max:100},{name:'搜索占比(%)',max:80},{name:'篇均留资',max:32}
       ],
-      axisName:{color:LB,fontSize:11},
+      axisName:{color:LB,fontSize:10},
       splitArea:{areaStyle:{color:['rgba(99,102,241,.02)','rgba(99,102,241,.05)']}},
       splitLine:{lineStyle:{color:AX}},axisLine:{lineStyle:{color:AX}},
-      center:['50%','56%'],radius:'65%'
+      center:['50%','56%'],radius:'60%'
     },
     series:[{type:'radar',data:[
-      {name:'北京号',value:[29.5,4.11,91.8,93.1,72.7],
-        lineStyle:{color:'#6366f1',width:2},areaStyle:{color:'rgba(99,102,241,.25)'},itemStyle:{color:'#6366f1'}},
-      {name:'深圳号',value:[18.4,2.29,77.7,74.9,33.6],
-        lineStyle:{color:'#fb923c',width:2},areaStyle:{color:'rgba(251,146,60,.25)'},itemStyle:{color:'#fb923c'}},
-      {name:'广州号',value:[1.2,3.98,70.2,84.3,26.1],
-        lineStyle:{color:'#34d399',width:2},areaStyle:{color:'rgba(52,211,153,.25)'},itemStyle:{color:'#34d399'}}
+      {name:'郑州柳燕',value:[4.88,69.9,74.2,29.0,20.6],lineStyle:{color:'#f472b6',width:2},areaStyle:{color:'rgba(244,114,182,.2)'},itemStyle:{color:'#f472b6'}},
+      {name:'北京欧扬',value:[4.11,91.8,93.1,72.7,29.5],lineStyle:{color:'#6366f1',width:2},areaStyle:{color:'rgba(99,102,241,.2)'},itemStyle:{color:'#6366f1'}},
+      {name:'深圳张德清',value:[2.29,77.7,74.9,33.6,18.4],lineStyle:{color:'#fb923c',width:2},areaStyle:{color:'rgba(251,146,60,.2)'},itemStyle:{color:'#fb923c'}},
+      {name:'朱冠峰小助理',value:[4.66,57.6,47.7,7.7,12.4],lineStyle:{color:'#22d3ee',width:2},areaStyle:{color:'rgba(34,211,238,.2)'},itemStyle:{color:'#22d3ee'}}
     ]}]
-  });
-
-  // 广州号内容方向饼图
-  var c3=echarts.init(document.getElementById('chartGZContent'));
-  _charts.push(c3);
-  c3.setOption({
-    backgroundColor:EC_BG,
-    tooltip:Object.assign({trigger:'item',formatter:'{b}: {c}篇 ({d}%)'},TT),
-    legend:{orient:'vertical',left:'left',textStyle:{color:LB,fontSize:11}},
-    series:[{type:'pie',radius:['38%','68%'],center:['60%','50%'],
-      label:{color:LB,formatter:'{b}\n{d}%',fontSize:11},
-      emphasis:{itemStyle:{shadowBlur:16,shadowColor:'rgba(99,102,241,.5)'}},
-      data:[
-        {name:'技术/方法',value:53,itemStyle:{color:'#6366f1'}},
-        {name:'科普/知识',value:40,itemStyle:{color:'#34d399'}},
-        {name:'避坑/警示',value:28,itemStyle:{color:'#f87171'}},
-        {name:'答疑/互动',value:14,itemStyle:{color:'#22d3ee'}},
-        {name:'痛点共鸣',value:13,itemStyle:{color:'#fbbf24'}},
-        {name:'情感/悬念',value:10,itemStyle:{color:'#f472b6'}},
-        {name:'对比/选择',value:11,itemStyle:{color:'#818cf8'}},
-        {name:'人群定向',value:12,itemStyle:{color:'#fb923c'}},
-        {name:'福利/价格',value:4,itemStyle:{color:'#a78bfa'}},
-        {name:'其他',value:31,itemStyle:{color:'#334155'}}
-      ]
-    }]
-  });
-
-  // 方法论图（水平条形，展示各方法的适用度和来源）
-  var c4=echarts.init(document.getElementById('chartMethods'));
-  _charts.push(c4);
-  c4.setOption({
-    backgroundColor:EC_BG,
-    tooltip:Object.assign({trigger:'axis'},TT),
-    legend:{data:['搜索场景适用','推荐场景适用'],textStyle:{color:LB},top:4},
-    grid:{left:'22%',right:'5%',bottom:'3%',top:'12%',containLabel:false},
-    xAxis:{type:'value',max:100,splitLine:{lineStyle:{color:AX}},axisLabel:{color:LB,formatter:'{value}%'}},
-    yAxis:{type:'category',axisLine:{lineStyle:{color:AX}},axisLabel:{color:LB,fontSize:11},
-      data:['系列化栏目','人群定向标题','科普+避坑','通俗化技术话术','福利/补贴标题','地域+多痛点标题']},
-    series:[
-      {name:'搜索场景适用',type:'bar',stack:'s',barMaxWidth:20,
-        itemStyle:{color:'#6366f1',borderRadius:[0,0,0,0]},
-        data:[60,80,70,85,65,95]},
-      {name:'推荐场景适用',type:'bar',stack:'s',
-        itemStyle:{color:'#34d399',borderRadius:[0,4,4,0]},
-        label:{show:true,position:'right',color:LB,fontSize:11,formatter:function(p){
-          var src=['广州号','三账号','广州号','三账号','深圳号','北京号'];
-          return src[p.dataIndex];
-        }},
-        data:[40,20,30,15,35,5]}
-    ]
   });
 
   window.addEventListener('resize',function(){_charts.forEach(function(c){c.resize()})});
